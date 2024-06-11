@@ -23,7 +23,7 @@ services:
     ports:
       - '5000:5000'
     environment:
-      OPENWEATHERMAP_API_KEY: '849b9ae64a77902c1474f0d4a136dae6'
+      OPENWEATHERMAP_API_KEY: PASTE_TOKEN_HERE
       SQLALCHEMY_DATABASE_URI: 'postgresql+psycopg2://postgres@db:5432/beehero'
 
 volumes:
