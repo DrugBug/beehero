@@ -1,0 +1,5 @@
+flask
+Flask-SQLAlchemy
+pytest
+requests
+psycopg2-binary

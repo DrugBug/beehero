@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: 'beehero'
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      SERVICE_MANAGER: 'fsm-postgres'
+    expose:
+      - '5432'
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'database_data:/var/lib/postgresql/data'
+
+  api:
+    build: .
+    links:
+      - 'db'
+    expose:
+      - '5000'
+    ports:
+      - '5000:5000'
+    environment:
+      OPENWEATHERMAP_API_KEY: '849b9ae64a77902c1474f0d4a136dae6'
+      SQLALCHEMY_DATABASE_URI: 'postgresql+psycopg2://postgres@db:5432/beehero'
+
+volumes:
+  database_data:
+    driver: local
