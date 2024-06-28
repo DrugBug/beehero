@@ -1,5 +1,5 @@
 ### INSTALLATION INSTRUCTIONS ###
-This assignment was built using Python 3.10 (Flask, SQLAlchemy + Postgres).
+Webapp with Python 3.10 (Flask, SQLAlchemy + Postgres).
 1. Clone this repository.
 2. Paste the OpenWeatherMap token you received into the `docker-compose.yml` file where the environment variable `OPENWEATHERMAP_API_KEY` is found.
 2. Enter the main directory (where the `docker-compose.yml` is found) and run `docker-compose up` to build and run the services.
